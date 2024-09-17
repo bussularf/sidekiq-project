@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: fernanda
+  password: 
+
+development:
+  <<: *default
+  database: sidekiq_project_development
+
+test:
+  <<: *default
+  database: sidekiq_project_test
+
+production:
+  <<: *default
+  database: sidekiq_project_production
+  username: sidekiq_project
+  password: <%= ENV['TSIDEKIQ_PROJECT_DATABASE_PASSWORD'] %>
