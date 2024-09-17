@@ -15,7 +15,9 @@ Ruby 3.2.2 ou superior
 Rails 7.2.1
 Redis (versão 6.2.0 ou superior para Sidekiq)
 MailCatcher (para visualização de e-mails)
-* Configuração do Ambiente
+
+### Configuração do Ambiente
+
 1 Instalação das Dependências
 ```
 bundle install
