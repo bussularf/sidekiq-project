@@ -1,5 +1,4 @@
 class SendReportJob < ApplicationJob
-  require_relative "../mailers/report_mailer"
   queue_as :default
 
   def perform(user)
