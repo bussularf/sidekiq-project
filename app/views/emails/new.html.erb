@@ -1,0 +1,33 @@
+<div class="container mt-5">
+  <h1 class="mb-4">Enviar E-mail</h1>
+  <div class="form-group">
+
+  <%= form_with url: send_email_path, local: true, class: "needs-validation" do |form| %>
+    <div class="mb-3">
+      <%= form.label :user_id, "Selecione um usuário:", class: "form-label" %>
+      <%= form.collection_select :user_id, User.all, :id, :name, { prompt: "Escolha um usuário" }, { class: "form-select" } %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :subject, "Assunto:", class: "form-label" %>
+      <%= form.text_field :subject, class: "form-control", placeholder: "Digite o assunto" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :body, "Corpo do e-mail:", class: "form-label" %>
+      <%= form.text_area :body, rows: 10, class: "form-control", placeholder: "Escreva a mensagem do e-mail" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.submit "Enviar E-mail", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+
+  <% if notice %>
+    <div class="alert alert-<%= notice['class'] %> mt-4"><%= notice['message'] %></div>
+  <% end %>
+</div>
+
+  <%= link_to "Add user", new_user_path, class: "btn btn-secondary mt-3" %>
+</div>
+

@@ -1,6 +1,13 @@
 class ReportMailer < ApplicationMailer
-  def send_report(user)
+  def send_report(user, subject, body)
     @user = user
-    mail(to: @user.email, subject: "Your Report")
+    @body = body
+
+    mail(
+      to: @user.email,
+      subject: subject
+    ) do |format|
+      format.text { render plain: @body }
+    end
   end
 end
