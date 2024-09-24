@@ -99,6 +99,3 @@ http://localhost:3000
 Verifique e-mails no MailCatcher:
 
 Abra http://localhost:1080 para visualizar os e-mails capturados.
-
-Licença
-Este projeto é licenciado sob a MIT License.
